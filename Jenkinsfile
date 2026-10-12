@@ -1,5 +1,10 @@
 pipeline{
     agent {label 'build-vm'}
+ 
+   triggers{
+	pollSCM('H/2 * * * *')
+	}
+
     stages{
         stage('gitclone'){
             steps{
